@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".candle").click(function () {
+          $(".flame").animate({ opacity: 0 }, "fast");
+          $(".text").animate({ top: 90, opacity: 1 }, "fast");
+          $(".text2").animate({ opacity: 0 }, "fast");
+        });
+      });
+    </script>
+    <title>Happy Birthday</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="cake">
+        <div class="lyr lyr-1"></div>
+        <div class="lyr lyr-2"></div>
+        <div class="lyr lyr-3"></div>
+      </div>
+      <div class="candle"></div>
+      <div class="fram">
+        <div class="smoke smk-1"></div>
+        <div class="smoke smk-2"></div>
+        <div class="smoke smk-3"></div>
+        <div class="smoke smk-4"></div>
+        <div class="smoke smk-5"></div>
+
+        <div class="flm-part red fliped"></div>
+        <div class="flm-part orange"></div>
+        <div class="flm-part yellow fliped"></div>
+        <div class="flm-part white"></div>
+      </div>
+    </div>
+    <p class="text2">*click on the Happy 18th Birthday for surprise</p>
+    <div class="text">
+      <li><a href="navi.html">Happy 18th Birthday!</a></li>
+    </div>
+  </body>
+</html>

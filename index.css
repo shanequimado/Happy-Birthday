@@ -1,0 +1,312 @@
+body {
+  background-color: #f07167;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  position: relative;
+  width: 240px;
+  height: 480px;
+}
+
+.cake {
+  position: absolute;
+  bottom: 0;
+}
+
+.lyr {
+  width: 240px;
+  height: 96px;
+  position: absolute;
+  background-color: currentColor;
+  border-radius: 120px / 24px;
+}
+
+.lyr-1 {
+  color: bisque;
+  bottom: 0;
+}
+
+.lyr-2 {
+  color: rgb(167, 98, 14);
+  bottom: 48px;
+}
+
+.lyr-3 {
+  color: rgb(68, 41, 7);
+  bottom: 96px;
+  background-image: radial-gradient(
+    ellipse 7.5rem 1.5rem at 7.5rem 1.5rem,
+    gold,
+    gold 5%,
+    #e99788 100%,
+    transparent
+  );
+}
+
+.candle {
+  position: absolute;
+  background-color: red;
+  width: 32px;
+  left: 104px;
+  height: 160px;
+  bottom: 160px;
+  border-radius: 20px / 10px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    white,
+    white 10%,
+    transparent 10%,
+    transparent 20%
+  );
+}
+
+.candle::before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 4px;
+  height: 32px;
+  border-radius: 4px / 2.4px;
+  left: 15px;
+  top: -22px;
+}
+
+.candle::after {
+  background-color: red;
+  display: block;
+  content: "";
+  width: 32px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.fram {
+  position: absolute;
+  left: 104px;
+}
+
+.smoke {
+  color: currentColor;
+  background-color: currentColor;
+  top: 125px;
+  width: 6px;
+  height: 6px;
+  position: relative;
+  animation-name: burn-smoke;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+.smk-1 {
+  left: 8px;
+  animation-duration: 0.5s;
+}
+
+.smk-2 {
+  left: -8px;
+  animation-duration: 0.6s;
+}
+
+.smk-3 {
+  left: 16px;
+  animation-duration: 0.7s;
+}
+
+.smk-4 {
+  left: 24px;
+  animation-duration: 0.8s;
+}
+.smk-5 {
+  left: 32px;
+  animation-duration: 0.9s;
+}
+
+.flm-part {
+  background-color: currentColor;
+  border-color: currentColor;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(60deg) skewX(0deg) scale(1);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.flm-part.fliped {
+  transform: rotate(120deg) skewX(0deg) scale(1);
+}
+
+.flm-part::before {
+  content: "";
+  position: absolute;
+  border-radius: 0 0 0 100%;
+  border-bottom-style: solid;
+  border-bottom-color: inherit;
+  border-bottom-width: 32px;
+  width: 32px;
+  height: 8px;
+  left: -16px;
+  top: -8px;
+}
+
+.flm-part.fliped::before {
+  border-radius: 100% 0 0 0;
+  border-bottom: 0 solid transparent;
+  border-top-style: solid;
+  border-top-color: inherit;
+  border-top-width: 32px;
+  width: 32px;
+  height: 8px;
+  left: -16px;
+  top: 0px;
+}
+
+.red {
+  color: red;
+  top: 84.4px;
+  opacity: 0.7;
+  animation-name: burn-red;
+  animation-duration: 1s;
+}
+
+.orange {
+  color: orange;
+  top: 57px;
+  opacity: 0.8;
+  box-shadow: 0 0 16px orange;
+  animation-name: burn-orange;
+  animation-duration: 0.4s;
+}
+
+.yellow {
+  color: yellow;
+  top: 28px;
+  opacity: 0.9;
+  box-shadow: 0 0 16px yellow;
+  animation-name: burn-yellow;
+  animation-duration: 1.6s;
+}
+
+.white {
+  color: white;
+  box-shadow: 0 0 16px white;
+  animation-name: burn-white;
+  animation-duration: 1.8s;
+}
+
+@keyframes burn-smoke {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) scale(4);
+    opacity: 0;
+    top: 0;
+  }
+}
+
+@keyframes burn-red {
+  0% {
+    transform: rotate(120deg) skewX(0deg) scale(1.8);
+  }
+  20% {
+    transform: rotate(118deg) skewX(5deg) scale(2);
+  }
+  40% {
+    transform: rotate(120deg) skewX(0deg) scale(1.8);
+  }
+  60% {
+    transform: rotate(122deg) skewX(-5deg) scale(2);
+  }
+  100% {
+    transform: rotate(120deg) skewX(0deg) scale(1.8);
+  }
+}
+
+@keyframes burn-white {
+  0% {
+    transform: rotate(60deg) skewX(0deg) scale(1);
+  }
+  20% {
+    transform: rotate(50deg) skewX(-3deg) scale(1.1);
+  }
+  40% {
+    transform: rotate(60deg) skewX(0deg) scale(1);
+  }
+  60% {
+    transform: rotate(70deg) skewX(3deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(60deg) skew(0deg) scale(1);
+  }
+}
+
+@keyframes burn-yellow {
+  0% {
+    transform: rotate(120deg) skewX(0deg) scale(1.4);
+  }
+  20% {
+    transform: rotate(110deg) skewX(10deg) scale(1.5);
+  }
+  40% {
+    transform: rotate(120deg) skewX(0deg) scale(1.4);
+  }
+  60% {
+    transform: rotate(130deg) skewX(-10deg) scale(1.5);
+  }
+  100% {
+    transform: rotate(120deg) skew(0deg) scale(1.4);
+  }
+}
+
+@keyframes burn-orange {
+  0% {
+    transform: rotate(65deg) skewX(0deg) scale(1.6);
+  }
+  20% {
+    transform: rotate(60deg) skewX(-15deg) scale(1.7);
+  }
+  40% {
+    transform: rotate(65deg) skewX(0deg) scale(1.6);
+  }
+  60% {
+    transform: rotate(70deg) skewX(2deg) scale(1.7);
+  }
+  100% {
+    transform: rotate(65deg) skew(0deg) scale(1.6);
+  }
+}
+.text,
+.text2 {
+  position: absolute;
+  color: white;
+  font-family: "Brush Script MT", cursive;
+  text-align: center;
+}
+.text {
+  width: auto;
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
+  font-size: 50px;
+  top: 80px;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.text2 {
+  font-size: 25px;
+  width: 300px;
+  top: 105px;
+}
+div li a {
+  text-decoration: none;
+  list-style: none;
+  color: #fff;
+}
